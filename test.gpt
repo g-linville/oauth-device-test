@@ -1,0 +1,5 @@
+cred: ./tool.gpt as microsoftToken
+tools: ./openapi.yaml, me.user.GetUser from ./me.yaml, me.sendMail from ./me.yaml, sys.chat.finish
+chat: true
+
+Determine my user ID. Then ask me what I would like to do.

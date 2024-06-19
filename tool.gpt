@@ -1,0 +1,3 @@
+Name: microsoft-oath-device-flow
+
+#!${GPTSCRIPT_TOOL_DIR}/bin/gptscript-go-tool "${GPTSCRIPT_INPUT}"
