@@ -10,7 +10,7 @@ import (
 
 type cred struct {
 	Env       map[string]string `json:"env"`
-	ExpiresAt time.Time         `json:"expiresAt"`
+	ExpiresAt *time.Time        `json:"expiresAt"`
 }
 
 func main() {
@@ -35,7 +35,7 @@ func printCredential(graphHelper *graphhelper.GraphHelper) {
 
 	c := cred{
 		Env:       map[string]string{"GPTSCRIPT_GRAPH_MICROSOFT_COM_BEARER_TOKEN": token.Token},
-		ExpiresAt: token.ExpiresOn,
+		ExpiresAt: &token.ExpiresOn,
 	}
 
 	credJSON, err := json.Marshal(c)
@@ -43,5 +43,5 @@ func printCredential(graphHelper *graphhelper.GraphHelper) {
 		log.Panicf("Error marshaling credential: %v\n", err)
 	}
 
-	fmt.Print(credJSON)
+	fmt.Print(string(credJSON))
 }
